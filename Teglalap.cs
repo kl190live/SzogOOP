@@ -28,7 +28,7 @@ namespace SzogOOP
 
 		public override string ToString()
 		{
-			return $"a: {this.A} - b: {this.b} - K: {this.GetKerulet()} - T: {GetTerulet()}";
+			return $"a: {this.A} - b: {this.b} - {base.ToString()}";
 		}
 
 	}

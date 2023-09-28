@@ -10,12 +10,16 @@ namespace SzogOOP
 	{
 		private double b;
 		private double c;
-		private static Random rnd= new Random();
+		
 
 		public Haromszog(double a,double b, double c) :base(a)
 		{
 			this.B = b;
 			this.C = c;
+			if (!Szerkesztheto())
+			{
+				throw new ArgumentException("A háromszög nem szerkeszthető");
+			}
 		}
 
 		public Haromszog() : base(VeletlenoldalHossz())
@@ -30,24 +34,51 @@ namespace SzogOOP
 			}
 		}
 
-		private static int VeletlenoldalHossz()
+		public override double A
+		{ 
+			set 
+			{
+				if (!Szerkesztheto())
+				{
+					base.A = value;
+					throw new ArgumentException("A háromszög nem szerkeszthető", nameof(value));
+				}
+			}
+		}
+		
+		
+		public double B
 		{
-			return rnd.Next(5, 15);
+			get => b;
+			set
+			{
+				throw new ArgumentException("A háromszög nem szerkeszthető", nameof(value));
+			}
+		
 		}
 
-		public double B { get => b; set => b = value; }
-		public double C { get => c; set => c = value; }
+		public double C
+		{
+			get => c;
+			set
+			{
+				throw new ArgumentException("A háromszög nem szerkeszthető", nameof(value));
+			}
+
+		}
+
+		
 
 		private bool Szerkesztheto()
 		{ 
-			return this.A + this.B > this.C 
-				&& this.A + this.C > this.b 
-				&& this.c + this.B > this.A;
+			return this.A + this.b > this.c 
+				&& this.A + this.c > this.b 
+				&& this.c + this.b > this.A;
 		}
 
 		public override double GetKerulet()
 		{ 
-			return this.A + this.B + this.c;
+			return this.A + this.b + this.c;
 		}
 
 		public override double GetTerulet()

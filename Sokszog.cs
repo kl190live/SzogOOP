@@ -15,11 +15,22 @@ namespace SzogOOP
 			this.A = a;
 		}
 
-		public double A { get => a; set => a = value; }
+		public virtual double A { get => a; set => a = value; }
 
 		public abstract double GetKerulet();
 
 		public abstract double GetTerulet();
+
+		protected static int VeletlenoldalHossz()
+		{
+			Random rnd = new Random();
+			return rnd.Next(5, 15);
+		}
+
+		public static double Radian(double fok)
+		{
+			return fok * Math.PI / 180;	
+		}
 
 		public override string ToString()
 		{
