@@ -17,16 +17,19 @@ namespace SzogOOP
 
 		public double B { get => b; set => b = value; }
 
-		public double getKerulet()
+		public double GetKerulet()
 		{
 			return 2 * (this.A + this.b);
 		}
-		public double getTerulet()
+		public double GetTerulet()
 		{
 			return this.A * this.b;
 		}
 
-
+		public override string ToString()
+		{
+			return $"a: {this.A} - b: {this.b} - K: {this.GetKerulet()} - T: {GetTerulet()}";
+		}
 
 	}
 }

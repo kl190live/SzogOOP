@@ -33,15 +33,20 @@ namespace SzogOOP
 		public double C { get => c; set => c = value; }
 
 
-		public double getHaromszogKerulet()
+		public double GetHaromszogKerulet()
 		{ 
 			return this.A + this.B + this.c;
 		}
 
-		public double getHaromszogTerulet()
+		public double GetHaromszogTerulet()
 		{
-			double s= this.getHaromszogKerulet() / 2;
+			double s= this.GetHaromszogKerulet() / 2;
 			return Math.Sqrt(s*(s-this.A)* (s - this.b) * (s - this.c));
+		}
+
+		public override string ToString()
+		{
+			return $"a: {this.A} - b: {this.b} -  c: {this.c} -K: {this.GetHaromszogKerulet()} - T: {GetHaromszogTerulet()}";
 		}
 
 	}

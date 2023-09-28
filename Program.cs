@@ -10,6 +10,8 @@ namespace SokszogOOP
 	{
 		static void Main(string[] args)
 		{
+
+
 		}
 	}
 }
