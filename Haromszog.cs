@@ -22,6 +22,12 @@ namespace SzogOOP
 		{
 			this.b = VeletlenoldalHossz();
 			this.c = VeletlenoldalHossz();
+			while (!Szerkesztheto()) 
+			{ 
+				this.A = VeletlenoldalHossz();
+				this.b = VeletlenoldalHossz();
+				this.c = VeletlenoldalHossz();
+			}
 		}
 
 		private static int VeletlenoldalHossz()
@@ -32,21 +38,27 @@ namespace SzogOOP
 		public double B { get => b; set => b = value; }
 		public double C { get => c; set => c = value; }
 
+		private bool Szerkesztheto()
+		{ 
+			return this.A + this.B > this.C 
+				&& this.A + this.C > this.b 
+				&& this.c + this.B > this.A;
+		}
 
-		public double GetHaromszogKerulet()
+		public override double GetKerulet()
 		{ 
 			return this.A + this.B + this.c;
 		}
 
-		public double GetHaromszogTerulet()
+		public override double GetTerulet()
 		{
-			double s= this.GetHaromszogKerulet() / 2;
+			double s= this.GetKerulet() / 2;
 			return Math.Sqrt(s*(s-this.A)* (s - this.b) * (s - this.c));
 		}
 
 		public override string ToString()
 		{
-			return $"a: {this.A} - b: {this.b} -  c: {this.c} -K: {this.GetHaromszogKerulet()} - T: {GetHaromszogTerulet()}";
+			return $"a: {this.A} - b: {this.b} -  c: {this.c} - {base.ToString()}";
 		}
 
 	}
