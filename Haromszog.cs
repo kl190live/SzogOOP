@@ -61,5 +61,6 @@ namespace SzogOOP
 			return $"a: {this.A} - b: {this.b} -  c: {this.c} - {base.ToString()}";
 		}
 
+
 	}
 }
