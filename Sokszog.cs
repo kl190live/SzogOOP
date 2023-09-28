@@ -12,7 +12,7 @@ namespace SzogOOP
 
 		public Sokszog(double a)
 		{
-			this.A = a;
+			this.a = a;
 		}
 
 		public virtual double A { get => a; set => a = value; }

@@ -9,7 +9,6 @@ namespace SzogOOP
 	internal class Paralelogramma : Teglalap
 	{
 		private double alpha;
-		private static Random random=new Random();
 
 		public Paralelogramma(double a,double b,double alpha):base(a,b)
 		{
@@ -18,8 +17,8 @@ namespace SzogOOP
 
 		public Paralelogramma() : base(VeletlenoldalHossz(),VeletlenoldalHossz())
 		{
-			
-		}
+            
+        }
 
 		public double Alpha { get => alpha; set => alpha = value; }
 
