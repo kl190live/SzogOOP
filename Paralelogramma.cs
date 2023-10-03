@@ -12,15 +12,25 @@ namespace SzogOOP
 
 		public Paralelogramma(double a,double b,double alpha):base(a,b)
 		{
+			if (alpha >= 180)
+			{
+				throw new ArgumentException("Az oldalak közbezárt szőg nem lehet 180-nál nagyobb", nameof(alpha));
+			}
 			this.Alpha = alpha;
 		}
 
 		public Paralelogramma() : base(VeletlenoldalHossz(),VeletlenoldalHossz())
 		{
-            
+			this.alpha = VeletelenSzog();
         }
 
-		public double Alpha { get => alpha; set => alpha = value; }
+		public double Alpha
+		{
+			get => alpha;
+			set {
+				throw new ArgumentException("Az oldalak közbezárt szőg nem lehet 180-nál nagyobb", nameof(value));
+			}
+		}
 
 		public override double GetKerulet()
 		{

@@ -27,6 +27,12 @@ namespace SzogOOP
 			return rnd.Next(5, 15);
 		}
 
+		protected static int VeletelenSzog()
+		{
+			Random rnd = new Random();
+			return rnd.Next(1, 180);
+		}
+
 		public static double Radian(double fok)
 		{
 			return fok * Math.PI / 180;	
